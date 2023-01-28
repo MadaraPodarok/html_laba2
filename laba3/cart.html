@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;"/>
+    <title>Книжный магазин</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="./js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+
+    <div class="header">
+        <div class="logo"><a href="index.html"><img src="images/logo.gif" alt="" title="" /></a></div>
+        <div id="menu"></div>
+
+    </div>
+
+
+    <div class="center_content">
+        <div class="left_content">
+            <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title=""/></span>Корзина
+            </div>
+
+            <div class="feat_prod_box_details">
+
+                <table class="cart_table">
+                    <tr class="cart_title">
+                        <td>Фото</td>
+                        <td>Название книги</td>
+                        <td>Цена</td>
+                        <td>Количество</td>
+                        <td>Сумма</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="details.html">
+                                <img src="images/cart_thumb.gif" alt="" title=""  class="cart_thumb"/>
+                            </a>
+                        </td>
+                        <td>Books</td>
+                        <td>100 руб.</td>
+                        <td>3</td>
+                        <td>300 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title=""
+                                                        class="cart_thumb"/></a></td>
+                        <td>Books</td>
+                        <td>100 руб.</td>
+                        <td>1</td>
+                        <td>100 руб.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="details.html"><img src="images/cart_thumb.gif" alt="" title=""
+                                                        class="cart_thumb"/></a></td>
+                        <td>Books</td>
+                        <td>100 руб.</td>
+                        <td>2</td>
+                        <td>200 руб.</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" class="cart_total"><span class="red">Цена доставки:</span></td>
+                        <td> 250 руб</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" class="cart_total"><span class="red">Всего:</span></td>
+                        <td> 850 руб</td>
+                    </tr>
+
+                </table>
+                <a href="#" class="continue">&lt; Назад</a>
+                <a href="#" class="checkout">Оплатить &gt;</a>
+
+
+            </div>
+
+
+            <div class="clear"></div>
+        </div><!--end of left content-->
+
+        <div class="right_content" id="container1"></div>
+
+        <div class="clear"></div>
+    </div><!--end of center content-->
+
+
+    <div class="footer">
+    </div>
+
+
+</div>
+
+</body>
+</html>
+
+<script type="application/javascript">
+    $.ajax({
+        url: "./pages_parts/right_content.html",
+        dataType: "html",
+        success: function (response) {
+            document.getElementById('container1').innerHTML = response;
+        }
+    });
+    $.ajax({
+        url: "./pages_parts/menu.html",
+        dataType: "html",
+        success: function(response) {
+            document.getElementById('menu').innerHTML = response;
+        }
+    });
+</script>
