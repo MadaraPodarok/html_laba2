@@ -611,4 +611,19 @@ button.add_book_cart {
     color: #afaeaf;
 }
 
+.contact_phone {
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.working_mode {
+    display: block;
+    float: right;
+    margin: 10px 10px;
+    font-size: 16px;
+}
 
