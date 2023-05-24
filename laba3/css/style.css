@@ -627,3 +627,43 @@ button.add_book_cart {
     font-size: 16px;
 }
 
+
+.mybutton {
+    position: relative;
+    margin-right: 20px;
+    padding: 4px 14px;
+    border: 1px solid lightgreen;
+    background: none;
+    color: #286aab;
+    overflow: visible;
+    cursor: pointer;
+}
+.mybutton::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -35px 0 0 -35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    content: "";
+    opacity: 0;
+}
+
+.mybutton--animate-click-three::after {
+    background: lightgreen;
+}
+.mybutton--animate-click-three.mybutton--click::after {
+    animation: anim-nimate-click-three 0.5s forwards;
+}
+
+@keyframes anim-nimate-click-three {
+    0% {
+        opacity: 1;
+        transform: scale3d(0.1, 0.1, 1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale3d(8, 8, 1);
+    }
+}
